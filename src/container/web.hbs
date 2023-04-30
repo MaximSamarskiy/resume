@@ -1,0 +1,76 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    {{#with web}}
+    <section>
+        <div>
+            <h1><b>"WEB"</b></h1>
+        </div>
+        {{#each languages}}
+        <hr>
+        <hr>
+
+        <div>
+            <ul>
+                <li>
+                    <p>Name: <b>"{{name}}"</b></p>
+                    <p>Version: <b>"{{version}}</b></p>
+                    <div><b><u>{{description}}</u></b></div>
+                    <div>
+                        <h2><b>Elements:</b></h2>
+                    </div>
+                    <ul>
+                        {{#each elements}}
+                        <li>
+                            <p>
+                                Name: "{{name}}"
+                            </p>
+                            <p>
+                            <div>Description: <b><u>"{{description}}"</u></b></div>
+                            </p>
+                        </li>
+                    </ul>
+                    <br>
+                    <div><b>Attributes:</b></div>
+                    <div>
+                        <ul>
+                            {{#each attributes}}
+                            <li>
+                                Name: <b>"{{name}}"</b>
+                                <br>
+                                <br>
+                                <p><b><u>{{description}}</u></b></p>
+                            </li>
+                            {{/each}}
+                        </ul>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+        {{/each}}
+
+    </section>
+    <section>
+        <div>Css</div>
+        <ul>
+            <li>
+                {{name}}
+                <br>
+                {{version}}
+
+            </li>
+        </ul>
+    </section>
+    {{/with}}
+</div>
+
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
