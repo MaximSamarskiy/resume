@@ -14,34 +14,36 @@
         {{#with web}}
         <div>
             {{#each languages}}
-            <ul>
-                <p>
-                    <li>Name: <b>"{{name}}"</b></li>
-                </p>
-                <p>
-                    <li>Version: <b>"{{version}}"</b></li>
-                </p>
-                <p>
-                    <li>Description: <b><u>"{{description}}"</u></b></li>
-                </p>
-            </ul>
             <br>
+            <hr>
+            <ul>
+                <li>
+                    <p>Name: <b>"{{name}}"</b></p>
+                <li>Version: <b>"{{version}}"</b></li>
+                <br>
+                <li>Description: <b><u>"{{description}}"</u></b></li>
+                <br>
+                </li>
+            </ul>
             <hr>
             {{#if elements}}
             <h3><b>Elements:</b></h3>
             {{/if}}
+
             {{#each elements}}
-            <p>
-                <li>Name: <b>"{{name}}"</b></li>
-            </p>
-            <p>
-                <li>Description: <b>"{{description}}"</b></li>
-            </p>
+            <ul>
+                <li>
+                    <p> Name: <b>"{{name}}"</b></p>
+                <li>
+                    <p> Description: <b><u>"{{description}}"</u></b></p>
+                </li>
+                </li>
+            </ul>
             <ul>
                 <h4>Attributes:</h4>
                 {{#each attributes}}
                 <p>
-                    <li>Name: "{{name}}"</li>
+                    <li>Name: <b>"{{name}}"</b></li>
                 </p>
                 <p>
                     <li>Description: <b><u>"{{description}}"</u></b></li>
@@ -52,20 +54,22 @@
             {{#if properties}}
             <h3><b>Properties:</b></h3>
             {{/if}}
-            {{#each properties}}
-            <p>
-                <li>Name: <b>{{name}}</b></li>
-            </p>
-            <p>
-                <li>Description:<b>{{description}}</b></li>
-            </p>
+            <ul>
+                {{#each properties}}
+                <p>
+                    <li>Name: <b>{{name}}</b></li>
+                </p>
+                <p>
+                    <li>Description:<b>{{description}}</b></li>
+                </p>
+            </ul>
             <ul>
                 {{#each values}}
                 <p>
-                    <li>Value: {{value}}</li>
+                    <li>Value: <b>{{value}}</b></li>
                 </p>
                 <p>
-                    <li>Description: {{description}}</li>
+                    <li>Description: <b><u>"{{description}}"</u></b></li>
                 </p>
                 {{/each}}
             </ul>
@@ -73,13 +77,15 @@
             {{#if functions}}
             <h3><b>Functions:</b></h3>
             {{/if}}
-            {{#each functions}}
-            <p>
-                <li>Name: <b><u>"{{name}}"</u></b></li>
-            </p>
-            <p>
-                <li>Description: <b><u>"{{description}}</u></b></li>
-            </p>
+            <ul>
+                {{#each functions}}
+                <p>
+                    <li>Name: <b><u>"{{name}}"</u></b></li>
+                </p>
+                <p>
+                    <li>Description: <b><u>"{{description}}"</u></b></li>
+                </p>
+            </ul>
             <ul>
                 {{#each parameters}}
                 <p>
@@ -97,6 +103,7 @@
             {{/each}}
         </div>
         <br>
+        <hr>
         <hr>
         {{/with}}
     </section>
