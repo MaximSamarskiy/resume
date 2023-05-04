@@ -1,0 +1,149 @@
+{{!--
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+--}}
+
+<div>
+    <ul>
+        <h1>JavaScript <span class="badge bg-secondary">New</span></h1>
+        <p>
+            <b><u>
+                    {{description}}
+                </u></b>
+        </p>
+        <ul>
+            <li>
+                <h2>History:</h2>
+                {{#with history}}
+                Year: {{year}}
+                <p>Founder: <b>{{founder}}</b></p>
+                {{/with}}
+            </li>
+            <hr>
+            <br>
+        </ul>
+    </ul>
+    <div>
+        <ul>
+            <ul class="list-group">
+                <li>
+                    <h3>Types:</h3>
+                </li>
+                <li class="list-group-item">'Number'</li>
+                <li class="list-group-item">'String'</li>
+                <li class="list-group-item">'Boolean'</li>
+                <li class="list-group-item">'Null'</li>
+                <li class="list-group-item">'Undefined'</li>
+                <li class="list-group-item">'Symbol'</li>
+                <li class="list-group-item">'Object'</li>
+            </ul>
+        </ul>
+    </div>
+    <br>
+    <hr>
+    <hr>
+    <ul>
+        <h2><b>Syntax:</b></h2>
+        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top"
+            data-bs-title="Tooltip on top">
+            {{syntax.variables}}
+        </button>
+        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="right"
+            data-bs-title="Tooltip on right">
+            {{syntax.functions}}
+        </button>
+        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom"
+            data-bs-title="Tooltip on bottom">
+            {{syntax.conditionals}}
+        </button>
+        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left"
+            data-bs-title="Tooltip on left">
+            {{syntax.loops}}
+        </button>
+        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="left"
+            data-bs-title="Tooltip on left">
+            {{syntax.classes}}
+        </button>
+    </ul>
+    <br>
+    <br>
+    <ul>
+        <h3><b>Features: </b></h3>
+        <p><button type="button" class="btn btn-primary">'First-class functions'</button></p>
+        <p> <button type="button" class="btn btn-primary">'Closures'</button></p>
+        <p><button type="button" class="btn btn-primary">'Dynamic typing'</button></p>
+        <p><button type="button" class="btn btn-primary">'Prototype-based inheritance'</button></p>
+        <p><button type="button" class="btn btn-primary">'Asynchronous programming with Promises and
+                async/await'</button>
+        </p>
+        <p> <button type="button" class="btn btn-primary">'Modules with import/export statements'</button></p>
+    </ul>
+    <div>
+        <hr>
+        <br>
+        <ul>
+            <h3>Libraries:</h3>
+            <button type="button" class="btn btn-outline-primary" disabled>'jQuery'</button>
+            <button type="button" class="btn btn-outline-primary" disabled>'React'</button>
+            <button type="button" class="btn btn-outline-primary" disabled>'Angular'</button>
+            <button type="button" class="btn btn-outline-primary" disabled>'Vue'</button>
+            <button type="button" class="btn btn-outline-primary" disabled>'Node.js'</button>
+            <button type="button" class="btn btn-outline-primary" disabled>'Express.js'</button>
+            <button type="button" class="btn btn-outline-primary" disabled>'Lodash'</button>
+            <button type="button" class="btn btn-outline-primary" disabled>'Moment.js'</button>
+        </ul>
+    </div>
+    <br>
+    <div>
+        <ul>
+            <div class="btn-group">
+                <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    TOOLS
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">'Babel'</a></li>
+                    <li><a class="dropdown-item" href="#">'Webpack'</a></li>
+                    <li><a class="dropdown-item" href="#">'ESLint'</a></li>
+                    <li><a class="dropdown-item" href="#">'Jest'</a></li>
+                    <li><a class="dropdown-item" href="#">'Mocha'</a></li>
+                    <li><a class="dropdown-item" href="#">'Chai'</a></li>
+                    <li><a class="dropdown-item" href="#">'Selenium'</a></li>
+                    <li><a class="dropdown-item" href="#">'Cypress'</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+            </div>
+        </ul>
+        <div>
+            <ul>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">
+                            {{#each community}}
+                            <p><b>{{name}}</b></p>
+                            <p>{{type}}</p>
+
+                            {{/each}}
+                        </li>
+                    </ol>
+                </nav>
+            </ul>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    {{!--
+    Цей код містить лише те, що буде виводитись в
+
+    <body>
+        Адже наш layout/default.hbs має вже структуру HTML
+        --}}

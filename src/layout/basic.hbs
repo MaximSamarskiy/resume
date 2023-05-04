@@ -7,7 +7,7 @@
 
 <head>
   <title>
-    {{page.title}}
+    Basic
   </title>
   <meta charset='utf-8' />
   <link href='css/index.css' rel='stylesheet' />
@@ -18,30 +18,6 @@
 </head>
 
 <body>
-  {{#with header}}
-  <header>
-    <div>
-      <h1>{{name.firstname}} {{name.lastname}}</h1>
-    </div>
-    <div>
-      <b>{{position}}</b>
-    </div>
-    <br>
-    <div>
-      <em>
-        <p>{{salary}}</p>
-      </em>
-    </div>
-    <br>
-    <div>
-      <address>{{address}}</address>
-    </div>
-    <br>
-    <hr>
-  </header>
-  {{/with}}
-
-  {{> nav}}
 
   {{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу --}}
   {{{body}}}
