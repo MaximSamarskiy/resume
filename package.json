@@ -1,5 +1,5 @@
 {
-  "name": "resume",
+  "name": "resumepet",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -34,9 +34,5 @@
     "webpack": "^5.73.0",
     "webpack-cli": "^4.9.2"
   },
-<<<<<<< HEAD
   "devDependencies": {}
-=======
-  "devDependencies": { }
->>>>>>> 3bc8fd7d081c5f6b4456ddae2b1b209a98040daf
 }
