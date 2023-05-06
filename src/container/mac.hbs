@@ -1,0 +1,166 @@
+{{!--
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+--}}
+
+<div>
+    <ul>
+        <h1>{{name}}<span class="badge bg-secondary">{{price}}</span></h1>
+        <br>
+        <li>Description: <b>{{description}}</b></li>
+        <hr>
+        <br>
+        <li><b>Category: {{category}}</b></li>
+        <br>
+        <li>
+            <h3><b>Processor:</b></h3>
+        </li>
+        {{#with features}}
+        {{#with processor}}
+        <span class="badge text-bg-primary">Brand: {{brand}}</span>
+        <span class="badge text-bg-secondary">Model: {{model}}</span>
+        <span class="badge text-bg-success">Speed: {{speed}}</span>
+        <span class="badge text-bg-info">Cores: {{cores}}</span>
+        <span class="badge text-bg-dark">Cache: {{cache}}</span>
+        {{/with}}
+    </ul>
+    <br>
+    <div>
+        <ul>
+            <li>
+                <h3><b>Memory:</b></h3>
+            </li>
+            {{#with memory}}
+            <span class="badge text-bg-primary">Type: {{type}}</span>
+            <span class="badge text-bg-info">Size: {{size}}</span>
+            <span class="badge text-bg-dark">Speed: {{speed}}</span>
+            {{/with}}
+        </ul>
+    </div>
+    <br>
+    <div>
+        <ul>
+            <li>
+                <h3><b>Storage:</b></h3>
+            </li>
+            {{#with storage}}
+            <span class="badge text-bg-primary">Type: {{type}}</span>
+            <span class="badge text-bg-primary">Size: {{size}}</span>
+            {{/with}}
+        </ul>
+    </div>
+    <br>
+    <div>
+        <ul>
+            <li>
+                <h3><b>Display: </b></h3>
+            </li>
+            {{#with display}}
+            <span class="badge text-bg-primary">Size: {{size}}</span>
+            <span class="badge text-bg-secondary">Resolution: {{rezolution}}</span>
+            <span class="badge text-bg-success">Technology: {{technology}}</span>
+            <span class="badge text-bg-info">Color Space: {{color_space}}</span>
+            <span class="badge text-bg-dark">Brightness: {{brightness}}</span>
+            <span class="badge text-bg-success">Refresh Rate: {{refresh_rate}}</span>
+            {{/with}}
+        </ul>
+    </div>
+    <br>
+    <div>
+        <ul>
+            <li>
+                <h3><b>Graphics: </b></h3>
+            </li>
+            {{#with graphics}}
+            <span class="badge text-bg-primary">Brand: {{brand}}</span>
+            <span class="badge text-bg-secondary">Model: {{model}}</span>
+            <span class="badge text-bg-success">Memory: {{memory}}</span>
+            {{/with}}
+        </ul>
+    </div>
+    <hr>
+    <br>
+    <ul>
+        <li><b>Ports: </b></li>
+    </ul>
+    {{#each ports}}
+    <ul>
+        <ul>
+            <p>
+                <li>Type: {{type}}</li>
+            </p>
+            <p>
+                <li>Count: {{count}}</li>
+            </p>
+        </ul>
+        {{#if features}} <li><b>Features: <p>{{features}}</p></b></li> {{/if}}
+    </ul>
+    {{/each}}
+    <hr>
+    <br>
+    <div>
+        <ul>
+            <li>
+                <h3><b>Battery: </b></h3>
+                {{#with battery}}
+                <ul>
+                    <ul class="list-group">
+                        <li class="list-group-item">Type: <b>{{type}}</b></li>
+                        <li class="list-group-item">Capacity: <b>{{capacity}}</b></li>
+                        <li class="list-group-item">Life: <b>{{life}}</b></li>
+                        {{/with}}
+                    </ul>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <h4>Weight: <b>{{weight}}</b></h4>
+            </li>
+            <li>
+                <h3><b>Dimensions: </b></h3>
+            </li>
+            {{#with dimensions}}
+            <ul>
+                <ul class="list-group">
+                    <li class="list-group-item">Height: <b>{{height}}</b></li>
+                    <li class="list-group-item">Width: <b>{{width}}</b></li>
+                    <li class="list-group-item">Depth: <b>{{depth}}</b></li>
+                    {{/with}}
+                </ul>
+            </ul>
+    </div>
+    <hr>
+    <ul>
+        ]<li>
+            Operating System: <b>{{operating_system}}</b>
+        </li>
+    </ul>
+    <hr>
+    <ul>
+        <li>
+            <h4><b>Accessories: </b></h4>
+        </li>
+        <ul>
+            {{#each accessories}}
+            <ul class="list-group">
+                <li class="list-group-item">Name: <b>{{name}}</b></li>
+                <li class="list-group-item">Price: <b>{{price}}</b></li>
+                {{/each}}
+            </ul>
+        </ul>
+    </ul>
+    {{/with}}
+</div>
+
+
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в
+
+<body>
+    Адже наш layout/default.hbs має вже структуру HTML
+    --}}
