@@ -1,0 +1,119 @@
+{{!--
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+--}}
+<div>
+    <ul>
+        <h1><span class="badge text-bg-primary">{{name}}</span></h1>
+    </ul>
+</div>
+<div>
+    <ul>
+        <p>
+            <li><b>Users: </b></li>
+        </p>
+    </ul>
+    <ul>
+        <ul>
+            {{#each users}}
+            <ul class="list-group">
+                <li class="list-group-item">ID: <b>{{id}}</b></li>
+                <li class="list-group-item">A second item</li>
+                <li class="list-group-item">A third item</li>
+                <li class="list-group-item">A fourth item</li>
+                <li class="list-group-item">And a fifth one</li>
+            </ul>
+            <br>
+            <li>
+                <b>Friends:</b>
+            </li>
+            {{#each friends}}
+            <br>
+            <hr>
+            <ul>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-info">ID: <b>{{id}}</b></li>
+                    <li class="list-group-item list-group-item-info">Name: <b>{{name}}</b></li>
+                    <li class="list-group-item list-group-item-info">Gender: <b>{{gender}}</b></li>
+                    <li class="list-group-item list-group-item-info">Age: <b>{{age}}</b></li>
+                </ul>
+
+            </ul>
+            <br>
+
+            <li>
+                <b>Mutual Friends:</b>
+            </li>
+            <br>
+            {{#each mutual_friends}}
+            <br>
+            <ul>
+                <ul>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-warning">ID: <b>{{id}}</b></li>
+                        <li class="list-group-item list-group-item-warning">Name: <b>{{name}}</b></li>
+                        <li class="list-group-item list-group-item-warning">Gender: <b>{{gender}}</b></li>
+                        <li class="list-group-item list-group-item-warning">Age: <b>{{age}}</b></li>
+                    </ul>
+                    <br>
+                    {{#each mutual_friends}}
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-warning">ID: <b>{{id}}</b></li>
+                        <li class="list-group-item list-group-item-warning">Name: <b>{{name}}</b></li>
+                        <li class="list-group-item list-group-item-warning">Gender: <b>{{gender}}</b></li>
+                        <li class="list-group-item list-group-item-warning">Age: <b>{{age}}</b></li>
+
+                    </ul>
+
+                    {{/each}}
+                </ul>
+                {{/each}}
+
+            </ul>
+            {{/each}}
+            <br>
+            <div>
+                <ul>
+                    <li><b>Groups: </b></li>
+                    {{#each groups}}
+                    <br>
+                    <ul class="list-group">
+                        <li class="list-group-item list-group-item-danger">ID: <b>{{id}}</b></li>
+                        <li class="list-group-item list-group-item-danger">Name: <b>{{name}}</b></li>
+                        <li class="list-group-item list-group-item-danger">Description: <b>{{description}}</b></li>
+                    </ul>
+                    <ul>
+                        <br>
+                        <li><b>Members:</b></li>
+                        <ul>
+                            <br>
+                            {{#each members}}
+                            <ul class="list-group">
+                                <li class="list-group-item list-group-item-secondary">ID: <b>{{id}}</b></li>
+                                <li class="list-group-item list-group-item-secondary">Name: <b>{{name}}</b></li>
+                                <li class="list-group-item list-group-item-secondary">Gender:<b>{{gender}}</b></li>
+                                <li class="list-group-item list-group-item-secondary">Age:<b>{{age}}</b></li>
+                            </ul>
+                            <br>
+                            {{/each}}
+                        </ul>
+                    </ul>
+                    {{/each}}
+                </ul>
+            </div>
+        </ul>
+        <br>
+        <br>
+        <br>
+        {{/each}}
+
+    </ul>
+</div>
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в
+
+<body>
+    Адже наш layout/default.hbs має вже структуру HTML
+    --}}
