@@ -4,7 +4,8 @@
 --}}
 
 <div>
-<<<<<<< HEAD
+
+
 
     {{#with heading}}
     {{#with main}}
@@ -122,7 +123,7 @@
                                 <a class="nav-link" href="#">{{url}}</a>
                             </li>
 
-=======
+
     <div class="card">
         <div class="card-body">
             {{#with heading}}
@@ -133,7 +134,7 @@
                         <ul>
                             <h1>{{title}}<span class="badge bg-secondary"></span></h1>
                             {{text}}
->>>>>>> 7121de043f3a9dc4c920144fc97d43ac326af18d
+
                         </ul>
 
                         {{#with button_text}}
@@ -144,6 +145,28 @@
                             <p><button type="button" class="btn btn-outline-primary" disabled>{{outline}}</button>
                             </p>
                         </ul>
+
+    <div class="card">
+        <div class="card-body">
+            {{#with heading}}
+            {{#with main}}
+            <div>
+                <div class="card">
+                    <div class="card-body">
+                        <ul>
+                            <h1>{{title}}<span class="badge bg-secondary"></span></h1>
+                            {{text}}
+                        </ul>
+
+                        {{#with button_text}}
+                        <ul>
+                            <button type="button" class="btn btn-primary">{{solid}}</button>
+                            <br>
+                            <br>
+                            <p><button type="button" class="btn btn-outline-primary" disabled>{{outline}}</button>
+                            </p>
+                        </ul>
+
                     </div>
                 </div>
                 {{/with}}
