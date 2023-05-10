@@ -24,126 +24,47 @@
         </b>
         <br>
         <div class="row">
+            {{#each cards}}
             <div class="col-3">
                 <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
                     <div class="text-end">
-                        <span class="badge text-bg-success rounded-pill">isNEW</span>
-                        <span class="badge text-bg-danger rounded-pill">isTOP</span>
+                        {{#if this}}
+                        <span class="badge text-bg-success rounded-pill">{{isNew}}</span>
+                        {{/if}}
+                        {{#if this}}
+                        <span class="badge text-bg-danger rounded-pill">{{isTop}}</span>
+                        {{/if}}
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">COVID-19 Vaccinations Begin in Europe</h5>
-                        <p class="card-text">As the world continues to grapple with the ongoing COVID-19 pandemic,
-                            Europe begins its vaccination rollout, with healthcare workers and the elderly among the
-                            first to receive the vaccine.</p>
+                        <h5 class="card-title">{{title}}</h5>
+                        <p class="card-text">{{description}}</p>
                     </div>
                 </div>
             </div>
-            <div class="col-3">
-                <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-                    <div class="text-end">
-                        <span class="badge text-bg-danger rounded-pill">false</span>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Tesla Stock Surges After Record Sales</h5>
-                        <p class="card-text">Tesla's stock price jumps 10% following the company's announcement of
-                            record sales in the last quarter, thanks in part to strong demand for its electric vehicles.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-                    <div class="text-end">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">New Study Shows Benefits of Meditation for Mental Health</h5>
-                        <p class="card-text">A new study published in the Journal of the American Medical Association
-                            finds that practicing mindfulness meditation can lead to improved mental health outcomes for
-                            people struggling with depression and anxiety..</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-                    <div class="text-end">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">NASA Launches New Mars Rover</h5>
-                        <p class="card-text">NASA's Perseverance rover successfully launches on a mission to explore
-                            Mars, with the goal of collecting samples of the planet's surface and searching for signs of
-                            ancient microbial life.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-                    <div class="text-end">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">GameStop Shares Soar as Reddit Traders Rally</h5>
-                        <p class="card-text">Shares of GameStop surge as amateur traders on the social media platform
-                            Reddit rally to drive up the price, in what some are calling a battle between Wall Street
-                            and Main Street.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-                    <div class="text-end">
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">UK Announces Plan to Ban Sale of Gas-Powered Cars by 2030</h5>
-                        <p class="card-text">In an effort to combat climate change, the UK government announces a plan
-                            to ban the sale of new gas-powered cars and vans by 2030, with hybrid vehicles to follow in
-                            2035.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-                    <div class="text-end">
-                        <span class="badge text-bg-success rounded-pill">isNEW</span>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">New Study Shows Link Between Exercise and Longevity</h5>
-                        <p class="card-text">A new study published in the Journal of the American Medical Association
-                            suggests that regular exercise can help people live longer, with participants who exercised
-                            regularly having a lower risk of premature death.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3">
-                <div class="card text-bg-dark mb-3" style="max-width: 18rem;">
-                    <div class="text-end">
-                        <span class="badge text-bg-success rounded-pill">true</span>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Amazon Expands Grocery Delivery Service</h5>
-                        <p class="card-text">Amazon announces an expansion of its grocery delivery service, with plans
-                            to offer free delivery to Prime members on orders over $35 and to expand its selection of
-                            fresh and organic produce.</p>
-                    </div>
-                </div>
-            </div>
+            {{/each}}
         </div>
         {{/with}}
     </section>
     <hr>
     <section>
         {{#with goodsBlock}}
-        <ul class="nav nav-tabs">
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Active</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-            </li>
+        <div class="row">
+            <section class="col-12">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Electronics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home & Kitchen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Clothing & Accessories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Toys & Games</a>
+                    </li>
+            </section>
+        </div>
         </ul>
         <div>
             <div class="row mt-4">
@@ -177,12 +98,16 @@
                 <div class="alert alert-dark">
                     <h2>{{header}}</h2>
                     {{description}}
+                    {{#each buttons}}
                     <div class="pt-4">
-                        <p><button type="button" class="btn btn-primary" link="https://www.youtube.com/">Buy
-                                Subscription</button></p>
-                        <p><button type="button" class="btn btn-primary btn-lg" link="https://www.youtube.com/">Register
-                                Now</button></p>
+                        {{#if buttons}}
+                        <p><button type="button" class="btn btn-primary" link="{{link}}">{{text}}</button></p>
+                        {{/if}}
+                        {{#if this}}
+                        <p><button type="button" class="btn btn-primary btn-lg" link="{{link}}">{{text}}</button></p>
+                        {{/if}}
                     </div>
+                    {{/each}}
                 </div>
                 {{/with}}
             </div>
@@ -196,8 +121,9 @@
                 <div class="alert alert-success text-center pb-3">
                     <h2>{{title}}</h2>
                     {{description}}
-                    <p><button type="button" class="btn btn-primary" link="https://www.youtube.com/">Buy
-                            Subscription</button></p>
+                    {{#each buttons}}
+                    <p><button type="button" class="btn btn-primary" link="{{link}}">{{text}}</button></p>
+                    {{/each}}
                 </div>
                 {{/with}}
             </div>
