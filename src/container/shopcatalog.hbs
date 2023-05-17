@@ -45,11 +45,11 @@
         </div>
     </section>
     <section>
+        {{#with filterBlock}}
         <div class="row">
+            {{#with sellers}}
             <div class="col-4">
-                {{#with filterBlock}}
                 <div class="card">
-                    {{#with sellers}}
                     <h4 class="p-2">{{title}}</h4>
                     {{#each list}}
                     <div class="form-check">
@@ -115,10 +115,10 @@
                     <hr>
                     {{/each}}
                 </div>
-                {{/with}}
             </div>
-            <div class="col-5">
-                {{#each goodsList}}
+            {{/with}}
+            {{#each goodsList}}
+            <div class="col-2">
                 <div class="card" style="width: 18rem;">
                     <img src="{{img}}" class="card-img-top">
                     <div class="card-body">
@@ -156,8 +156,8 @@
                         {{/each}}
                     </div>
                 </div>
-                {{/each}}
             </div>
+            {{/each}}
         </div>
     </section>
     <section>
