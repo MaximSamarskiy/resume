@@ -1,14 +1,18 @@
 <ul>
     <section>
         <div>
-            {{#with navigation}} {{#each links}} <nav class="nav">
-                <a class="nav-link" href="#">{{text}} {{href}}</a>
+            {{#with navigation}}
+            {{#each links}}
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{href}}">{{text}}</a>
+                </li>
                 {{/each}}
                 {{#with button}}
-                <button type="button" class="btn btn-primary">{{text}} {{href}}</button>
+                <a href="{{href}}" class="btn btn-primary">{{text}}</a>
                 {{/with}}
-            </nav>
-            {{/with}}
+                {{/with}}
+            </ul>
         </div>
     </section>
     <br>
@@ -32,76 +36,28 @@
             {{/with}}
         </div>
         <div>
-            {{#with city}}
-            <br>
-            <h2>{{title}}</h2>
-            <div class="row g-5">
+            <div class="row">
+                {{#with city}}
+                <br>
+                <h2>{{title}}</h2>
+                {{#each cards}}
                 <div class="col-5">
+                    {{#with picture}}
                     <div class="card" style="width: 18rem;">
-                        <img src="https://picsum.photos/400/200" class="card-img-top" alt="New York">
+                        <img src="{{src}}" class="card-img-top" alt="{{alt}}">
+                        {{/with}}
                         <div class="card-body">
-                            <h5 class="card-title">New York City</h5>
-                            <p class="card-text">New York City comprises 5 boroughs sitting where the Hudson River meets
-                                the
-                                Atlantic Ocean. At its core is Manhattan, a densely populated borough that’s among the
-                                world’s major commercial, financial and cultural centers. Its iconic sites include
-                                skyscrapers such as the Empire State Building and sprawling Central Park.</p>
-                            <a href="https://github.com/" class="btn btn-primary">Reac</a>
+                            <h5 class="card-title">{{title}}</h5>
+                            <p class="card-text">{{description}}</p>
+                            {{#with button}}
+                            <a href="{{href}}" class="btn btn-primary">{{text}}</a>
+                            {{/with}}
                         </div>
                     </div>
                 </div>
-                <div class="col-5">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://picsum.photos/400/200" class="card-img-top" alt="Paris">
-                        <div class="card-body">
-                            <h5 class="card-title">Paris</h5>
-                            <p class="card-text">Paris, France's capital, is a major European city and a global center
-                                for
-                                art, fashion, gastronomy, and culture. Its 19th-century cityscape is crisscrossed by
-                                wide
-                                boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the
-                                12th-century, Gothic Notre-Dame cathedral, the city is known for its cafe culture, haute
-                                couture fashion houses, and designer boutiques along the Rue du Faubourg Saint-Honoré.
-                            </p>
-                            <a href="https://github.com/" class="btn btn-primary">Reac</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-5">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://picsum.photos/400/200" class="card-img-top" alt="Tokyo">
-                        <div class="card-body">
-                            <h5 class="card-title">Tokyo</h5>
-                            <p class="card-text">Tokyo, Japan’s bustling capital, mixes the ultramodern and the
-                                traditional,
-                                from neon-lit skyscrapers to historic temples. The opulent Meiji Shinto Shrine is known
-                                for
-                                its towering gate and surrounding woods. The Imperial Palace sits amid large public
-                                gardens.
-                                The city's many museums offer exhibits ranging from classical art (in the Tokyo National
-                                Museum) to a reconstructed kabuki theater (in the Edo-Tokyo Museum).</p>
-                            <a href="https://github.com/" class="btn btn-primary">Reac</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-5">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://picsum.photos/400/200" class="card-img-top" alt="Sydney">
-                        <div class="card-body">
-                            <h5 class="card-title">Sydney</h5>
-                            <p class="card-text">Sydney, capital of New South Wales and one of Australia's largest
-                                cities,
-                                is best known for its harborfront Opera House, with a distinctive sail-like design.
-                                Massive
-                                Darling Harbour and the smaller Circular Quay port are hubs of waterside life, with the
-                                arched Harbour Bridge and esteemed Royal Botanic Garden nearby. Sydney Tower’s outdoor
-                                platform, the Skywalk, offers 360-degree views of the city and suburbs.</p>
-                            <a href="https://github.com/" class="btn btn-primary">Reac</a>
-                        </div>
-                    </div>
-                </div>
+                {{/each}}
+                {{/with}}
             </div>
-            {{/with}}
         </div>
     </section>
     <hr>
@@ -140,177 +96,108 @@
     </section>
     <hr>
     <section>
-        {{#with gallery}}
-        <div>
-            <h2>{{title}}</h2>
-        </div>
-        <div class="row g-1">
+        <div class="row">
+            {{#with gallery}}
+            <div>
+                <h2>{{title}}</h2>
+            </div>
+            {{#each cards}}
             <div class="col-4">
                 <div class="card">
                     <div class="card-header">
-                        <div>The Mona Lisa</div>
+                        <div>{{name}}</div>
                     </div>
                     <ul class="list-group">
-                        <li class="list-group-item">'Painting',
-                            'Oil on poplar panel',
-                            '1503-1519',</li>
+                        <li class="list-group-item">{{items}}</li>
                     </ul>
                 </div>
             </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-header">
-                        <div>The Persistence of Memory</div>
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item">Painting', 'Oil on canvas', '1931</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-header">
-                        <div>The Starry Night</div>
-                    </div>
-                    <ul class="list-group">
-                        <li class="list-group-item">'Painting', 'Oil on canvas', '1889</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        {{/with}}
-    </section>
-    <hr>
-    <section>
-        <div>
-            {{#with relaxion}}
-            <br>
-
-            <div class="display-3">{{title}}</div>
-            <br>
-            <div class="row">
-                <div class="card text-bg-secondary " style="max-width: 18rem;">
-                    <div class="card-header">Meditation</div>
-                    <div class="card-body">
-                        <h5 class="card-title">The Benefits of Meditation</h5>
-                        <p class="card-text">Meditation can help reduce stress, anxiety, and depression, and improve
-                            overall well-being. Studies have also shown that regular meditation practice can enhance
-                            cognitive function and even boost the immune system.</p>
-                    </div>
-                </div>
-                <div class="card text-bg-secondary " style="max-width: 18rem;">
-                    <div class="card-header">Hydration</div>
-                    <div class="card-body">
-                        <h5 class="card-title">The Importance of Hydration</h5>
-                        <p class="card-text">Drinking enough water is essential for good health. Dehydration can lead to
-                            a range of symptoms, including fatigue, headaches, and constipation. It can also increase
-                            the risk of kidney stones and other health problems.</p>
-                    </div>
-                </div>
-                <div class="card text-bg-secondary " style="max-width: 18rem;">
-                    <div class="card-header">Yoga</div>
-                    <div class="card-body">
-                        <h5 class="card-title">The Benefits of Yoga</h5>
-                        <p class="card-text">Yoga can improve flexibility, strength, and balance, and help reduce stress
-                            and anxiety. It has also been shown to improve heart health and promote a sense of
-                            well-being.</p>
-                    </div>
-                </div>
-                <div class="card text-bg-secondary " style="max-width: 18rem;">
-                    <div class="card-header">Sunscreen</div>
-                    <div class="card-body">
-                        <h5 class="card-title">The Importance of Sunscreen</h5>
-                        <p class="card-text">Protecting your skin from the sun's harmful rays is crucial for reducing
-                            the risk of skin cancer and premature aging. Experts recommend using a broad-spectrum
-                            sunscreen with an SPF of at least 30 and reapplying every two hours.</p>
-                    </div>
-                </div>
-            </div>
+            {{/each}}
             {{/with}}
         </div>
     </section>
     <hr>
     <section>
-        {{#with rest}}
-
-        <div class="row">
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-header text-center">Cooking</div>
-                    <div class="card-body text-center">
-                        <div class="card-title">The Joy of Cooking</div>
-                        <p>Cooking is a creative outlet that can bring people together over delicious food.</p>
-                        <button type="button" class="btn btn-primary">Learn More</button>
-                    </div>
-                    <div class="card-footer text-center">Photo by Brooke Lark on Unsplash</div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-header text-center">Travel</div>
-                    <div class="card-body text-center">
-                        <div class="card-title">The Benefits of Traveling</div>
-                        <p>Traveling broadens your perspective, provides new experiences, and creates lasting memories.
-                        </p>
-                        <button type="button" class="btn btn-primary">Explore</button>
-                    </div>
-                    <div class="card-footer text-center">Photo by Sime Basioli on Unsplash</div>
-                </div>
-            </div>
-        </div>
-
-        {{/with}}
-    </section>
-    <hr>
-    <section>
-        {{#with proposition}}
-        <div class="display-2">{{title}}</div>
-        <br>
-        <div class="row">
-            <div class="col-5">
-                <div class="card text-bg-warning mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Our Approach</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Innovative Solutions for Your Business</h5>
-                        <p class="card-text">We create effective solutions that cater to your business needs.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-5">
-                <div class="card text-bg-warning mb-3" style="max-width: 18rem;">
-                    <div class="card-header">Our Expertise</div>
-                    <div class="card-body">
-                        <h5 class="card-title">Trusted and Experienced Professionals</h5>
-                        <p class="card-text">Our team of experts delivers tailored strategies for best results.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {{/with}}
-    </section>
-    <hr>
-    <section>
         <div>
-            {{#with footer}}
-            <h5>{{title}}</h5>
+            <div class="row pe-2">
+                {{#with relaxion}}
+                <br>
+                <div class="display-3">{{title}}</div>
+                <br>
+                {{#each cards}}
+                <div class="card text-bg-secondary " style="max-width: 18rem;">
+                    <div class="card-header">{{header}}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{title}}</h5>
+                        <p class="card-text">{{description}}</p>
+                    </div>
+                </div>
+                {{/each}}
+                {{/with}}
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div class="row">
+            {{#with rest}}
+            {{#each cards}}
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header text-center">{{header}}</div>
+                    <div class="card-body text-center">
+                        <div class="card-title">{{title}}</div>
+                        <p>{{description}}</p>
+                        <button type="button" class="btn btn-primary">{{button}}</button>
+                    </div>
+                    <div class="card-footer text-center">{{footer}}</div>
+                </div>
+            </div>
+            {{/each}}
+            {{/with}}
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div class="row">
+            {{#with proposition}}
+            <div class="display-2">{{title}}</div>
             <br>
-
-
-            {{#each navigation}}
-            <nav class="nav">
-                <a class="nav-link" href="{{href}}" role="link">{{text}}</a>
-            </nav>
-            {{/each}}
-            {{#each socialMedia}}
-            <div class="d-grid gap-3 col-1 mx-auto">
-                <a class="btn btn-outline-dark" href="{{link}}" role="button">{{name}}</a>
+            {{#each card}}
+            <div class="col-5">
+                <div class="card text-bg-warning mb-3" style="max-width: 18rem;">
+                    <div class="card-header">{{header}}</div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{title}}</h5>
+                        <p class="card-text">{{description}}</p>
+                    </div>
+                </div>
             </div>
             {{/each}}
-            {{#each partners}}
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a class="btn btn-outline-info" href="{{link}}" role="button">{{name}}</a>
+            {{/with}}
+        </div>
+    </section>
+    <hr>
+    <section>
+        <div class="row">
+            {{#with footer}}
+            <div class="col-4">
+                {{#each navigation}}
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{href}}">{{text}}</a>
+                    </li>
+                </ul>
+                {{/each}}
+                {{#each socialMedia}}
+
+                <a href="{{link}}" class="btn btn-outline-dark">{{name}}</a>
+                {{/each}}
+
+                {{#each partners}}
+                <a href="{{link}}" class="btn btn-outline-info">{{name}}</a>
+                {{/each}}
             </div>
-            {{/each}}
             {{/with}}
         </div>
         <br>
