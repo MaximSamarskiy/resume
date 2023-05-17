@@ -181,19 +181,21 @@
     <section>
         <div class="row">
             {{#with footer}}
-            <div class="col-4">
-                {{#each navigation}}
+               {{#each navigation}}
+                <div class="col">
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{href}}">{{text}}</a>
                     </li>
                 </ul>
+                </div>
                 {{/each}}
+                <div class="col-2">
                 {{#each socialMedia}}
-
                 <a href="{{link}}" class="btn btn-outline-dark">{{name}}</a>
                 {{/each}}
-
+                </div>
+             <div class="col-2">
                 {{#each partners}}
                 <a href="{{link}}" class="btn btn-outline-info">{{name}}</a>
                 {{/each}}
