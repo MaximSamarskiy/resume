@@ -46,10 +46,10 @@
     </section>
     <section>
         <div class="row">
-            <div class="col-4">
+            <div class="col-3">
                 {{#with filterBlock}}
+                {{#with sellers}}
                 <div class="card">
-                    {{#with sellers}}
                     <h4 class="p-2">{{title}}</h4>
                     {{#each list}}
                     <div class="form-check">
@@ -99,7 +99,6 @@
                         <a htef="link" class="btn btn-light">{{text}}</a>
                     </div>
                     {{/with}}
-
                     {{/with}}
                     <hr>
                     {{#each filterList}}
@@ -115,49 +114,50 @@
                     <hr>
                     {{/each}}
                 </div>
-                {{/with}}
             </div>
-            <div class="col-5">
-                {{#each goodsList}}
-                <div class="card" style="width: 18rem;">
-                    <img src="{{img}}" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <div class="col-3">
+            {{/with}}
+            <div class="col-9">
+                <div class="row">
+                    {{#each goodsList}}
+                    <div class="card col-3">
+                        <img src="{{img}}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">
                                 <span class="badge text-bg-warning rounded-pill">{{isHot}}</span>
                                 <span class="badge text-bg-primary rounded-pill">{{isNew}}</span>
+                            </h5>
+                            <p class="card-text">
+                            <h3>{{name}}</h3>
+                            </p>
+                            {{#with review}}
+                            <b>{{amount}}</b>
+                            <b>{{text}}</b>
+                            {{/with}}
+                            <br>
+                            <br>
+                            <h3>{{price}}</h3>
+                            {{delivery}}
+                            {{#each buttons}}
+                            {{#if isPrimary}}
+                            <div class="p-2">
+                                <a href="{{link}}" class="btn btn-primary">{{text}}</a>
+                                {{/if}}
+                                {{#if isSecondary}}
+                                <a href="{{link}}" class="btn btn-secondary">{{text}}</a>
+                                {{/if}}
                             </div>
-                        </h5>
-                        <p class="card-text">
-                        <h3>{{name}}</h3>
-                        </p>
-                        {{#with review}}
-                        <b>{{amount}}</b>
-                        <b>{{text}}</b>
-                        {{/with}}
-                        <br>
-                        <br>
-                        <h3>{{price}}</h3>
-                        {{delivery}}
-                        {{#each buttons}}
-                        {{#if isPrimary}}
-                        <div class="p-2">
-                            <a href="{{link}}" class="btn btn-primary">{{text}}</a>
-                            {{/if}}
-                            {{#if isSecondary}}
-                            <a href="{{link}}" class="btn btn-secondary">{{text}}</a>
-                            {{/if}}
+                            {{/each}}
+                            {{#each characteristics}}
+                            <li class="p-2">
+                                {{title}} {{value}}
+                            </li>
+                            {{/each}}
                         </div>
-                        {{/each}}
-                        {{#each characteristics}}
-                        <li class="p-2">
-                            {{title}} {{value}}
-                        </li>
-                        {{/each}}
                     </div>
+                    {{/each}}
                 </div>
-                {{/each}}
             </div>
+        </div>
         </div>
     </section>
     <section>
