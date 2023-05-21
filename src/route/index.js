@@ -1035,7 +1035,7 @@ router.get('/task22', function (req, res) {
 
 // ================================================================
 
-router.get('/ task31', function (req, res) {
+router.get('/task31', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
