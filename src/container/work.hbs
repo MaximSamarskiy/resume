@@ -11,72 +11,92 @@
             <div>
                 <ul>
                     {{#each works}}
-                    <li>
-                        <div>{{position}}</div>
-                        <br>
-                        <div>
-                            {{duration.from}} -
-                            {{#if duration.to}}
-                            {{duration.to}}
-                            {{else}} (досi працюю)
-                            {{/if}}
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio">
+                        <label class="form-check-label">
+                            {{position}}
+                        </label>
+                    </div>
+                    <br>
+                    <div>
+                        {{duration.from}} -
+                        {{#if duration.to}}
+                        {{duration.to}}
+                        {{else}} (досi працюю)
+                        {{/if}}
+                    </div>
+                    <br>
+                    <div>
+                        {{#if company.url}}
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio">
+                            <label class="form-check-label">
+                                {{> link text=company.name href=company.url blank=truy noLine=true}}
+                            </label>
                         </div>
-                        <br>
+                        {{else}}
+                        <b>{{company.name}}</b>
+                        {{/if}}
+                    </div>
+                    <br>
+                    <br>
+                    <div>
+                        <strong>Projects ({{projectAmount }})</strong>
+                    </div>
+                    <br>
+                    <ul>
+                        {{#each projects}}
                         <div>
-                            {{#if company.url}}
-                            {{> link text=company.name href=company.url blank=truy noLine=true}}
-                            {{else}}
-                            <b>{{company.name}}</b>
-                            {{/if}}
-                        </div>
-                        <br>
-                        <br>
-                        <div>
-                            <strong>Projects ({{projectAmount }})</strong>
-                        </div>
-                        <br>
-                        <ul>
-                            {{#each projects}}
-                            <li>
-                                <div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio">
+                                <label class="form-check-label">
                                     {{> link text=name href=url blank=truy noLine=true}}
+                                </label>
+                            </div>
+                        </div>
+                        <br>
+                        <div>
+                            <p>{{about}}</p>
+                        </div>
+                        <br>
+                        <div>
+                            <em>Project stacks ({{stackAmount}})</em>
+                        </div>
+                        <br>
+                        <div>
+                            <ul>
+                                {{#each stacks}}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label">
+                                        {{name}}
+                                    </label>
                                 </div>
-                                <br>
-                                <div>
-                                    <p>{{about}}</p>
+                                {{/each}}
+                            </ul>
+                        </div>
+                        <br>
+                        <div>
+                            <em>Project awards ({{awardAmount}})</em>
+                        </div>
+                        <br>
+                        <div>
+                            <ul>
+                                {{#each awards}}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox">
+                                    <label class="form-check-label">
+                                        {{name}}
+                                    </label>
                                 </div>
-                                <br>
-                                <div>
-                                    <em>Project stacks ({{stackAmount}})</em>
-                                </div>
-                                <br>
-                                <div>
-                                    <ul>
-                                        {{#each stacks}}
-                                        <li>{{name}}</li>
-                                        {{/each}}
-                                    </ul>
-                                </div>
-                                <br>
-                                <div>
-                                    <em>Project awards ({{awardAmount}})</em>
-                                </div>
-                                <br>
-                                <div>
-                                    <ul>
-                                        {{#each awards}}
-                                        <li>{{name}}</li>
-                                        {{/each}}
-                                    </ul>
-                                </div>
-                            </li>
-                            {{/each}}
-                        </ul>
-                    </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                        {{/each}}
+                    </ul>
                     <br>
                     {{/each}}
                 </ul>
-            </div>
         </section>
     </main>
     {{/with}}

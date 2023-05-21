@@ -2,33 +2,40 @@
     {{#with main}}
     <main>
         <section>
-            {{> title data="All Skills" big=true }}
-            <ul>
-                {{#each skills}}
-                <li>
-                    {{name}}
-                    {{#if point includeZero=true}} ({{point}}) {{/if}}
-                    {{#if isTop}} (TOP) {{/if}}
-                    {{#unless point includeZero=true}} (не вивчаемо) {{/unless}}
-                    {{#unless point}}
-                    {{#if point includeZero=true}}
-                    (зараз вивчаемо)
-                    {{/if}}
-                    {{/unless}}
-                </li>
-                {{/each}}
-            </ul>
-        </section>
-
-        <section>
-            {{> title data= "My Hobbies"}}
-            <ul>
-                {{#each hobbies}}
-                <li>
-                    {{name}} {{#if isMain includeZero=true}} (favourite) {{/if}}
-                </li>
-                {{/each}}
-            </ul>
+            <div class="card p-5 bg-info">
+                {{> title data="All Skills" big=true }}
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card p-3">
+                            {{#each skills}}
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio">
+                                <label class="form-check-label">
+                                    {{name}}
+                                    {{#if point includeZero=true}}({{point}}) {{/if}}
+                                    {{#unless point includeZero=true}} (не вивчаємо) {{/unless}}
+                                    {{#unless point}}
+                                    {{#if point includeZero=true}} (зараз вивчаємо) {{/if}}
+                                    {{/unless}}
+                                </label>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                    <div class="col-6 p-3">
+                        <div class="card p-2">
+                            {{#each hobbies}}
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio">
+                                <label class="form-check-label">
+                                    {{name}} ({{isMain}})
+                                </label>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     {{/with}}
